@@ -1,34 +1,32 @@
-- name: Demo on variables
-  hosts: localhost
+---
+- hosts: localhost
   vars:
-     URL: sample.com
+    URL: sample.com
+
   tasks:
     - name: print URL variable
       ansible.builtin.debug:
-       msg: "{{ URL }}"
+        msg: "{{ URL }}"
 
+    - name: Demo on Task variables
+      hosts: localhost
 
-# Value starts with a variable, like msg: {{ URL }} then quotes are needed, if it does not start with variable like msg:
+      tasks:
+        - name: set URL1 variable
+          set_fact:
+            URL1: sample.com
 
-- name: Demo on Task variables
-  hosts: localhost
-  vars:
-    URL1: example.com
-    URL2: example.com
+        - name: set URL2 variable
+          set_fact:
+            URL2: sample.com
 
-  tasks:
-    - name: print URL1 variable
-      ansible.builtin.debug:
-        msg: "{{ URL1 }}"
-        vars:
-          URL1: sample.com
-    - name: print URL2 variable
-      ansible.builtin.debug:
-        msg: "{{ URL2 }}"
-        vars:
-          URL2: sample.com
+        - name: print URL1 variable
+          ansible.builtin.debug:
+            msg: "{{ URL1 }}"
 
-
+        - name: print URL2 variable
+          ansible.builtin.debug:
+            msg: "{{ URL2 }}"
 
     - name: Register Variable Example
       host: localhost
