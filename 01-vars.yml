@@ -21,7 +21,7 @@
       ansible.builtin.debug:
         msg: "{{ URL1 }}"
         vars:
-          URL1:sample.com
+          URL1: sample.com
     - name: print URL2 variable
       ansible.builtin.debug:
         msg: "{{ URL2 }}"
