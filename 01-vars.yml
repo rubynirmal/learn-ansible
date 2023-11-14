@@ -1,4 +1,4 @@
-- name: demo on varibles
+- name: demo on variable
   hosts: localhost
   vars:
     URL: sample.com
@@ -18,21 +18,11 @@
             msg: "{{ URL1 }}"
             vars:
             URL1: sample.com
-
         - name: print URL2 variable
           ansible.builtin.debug:
             msg: "{{ URL2 }}"
             vars:
             URL2: sample.com
-
-
-        - name: print URL1 variable
-          ansible.builtin.debug:
-            msg: "{{ URL1 }}"
-
-        - name: print URL2 variable
-          ansible.builtin.debug:
-            msg: "{{ URL2 }}"
 
     - name: Register Variable Example
       host: localhost
