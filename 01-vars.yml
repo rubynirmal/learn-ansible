@@ -7,6 +7,8 @@
       ansible.builtin.debug:
        msg: "{{ URL }}"
 
+    - include: 02-register-variable.yml
+
 # Value starts with a variable, like msg: {{ URL }} then quotes are needed, if it does not start with variable like msg:
 
 - name: Demo on Task variables
