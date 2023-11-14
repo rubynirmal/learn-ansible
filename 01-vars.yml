@@ -7,8 +7,6 @@
       ansible.builtin.debug:
        msg: "{{ URL }}"
 
-    -  include: /home/centos/learn-ansible/register-variable.yml
-        mv register-variable.yml 01-vars.yml
 
 # Value starts with a variable, like msg: {{ URL }} then quotes are needed, if it does not start with variable like msg:
 
@@ -27,3 +25,13 @@
         msg: "{{ URL2 }}"
 
 
+
+    - name: Register Variable Example
+      host: localhost
+      tasks:
+        - name: get uptime of server
+          ansible.builtin.shell: uptime
+          register: OUT
+        - name: print OUT var
+          ansible.builtin.debug:
+            msg: "{{ OUT }}"
