@@ -11,11 +11,14 @@
 
 - name: Demo on Task variables
   hosts: localhost
+  vars:
+    URL: sample.com
+    URL1: sample.com
+    URL2: sample.com
   tasks:
     - name: print URL1 variable
       ansible.builtin.debug:
         msg: "{{ URL1 }}"
-
     - name: print URL2 variable
       ansible.builtin.debug:
         msg: "{{ URL2 }}"
