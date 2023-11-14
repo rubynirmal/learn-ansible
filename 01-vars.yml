@@ -32,6 +32,10 @@
         - name: get uptime of server
           ansible.builtin.shell: uptime
           register: OUT
+        - hosts: localhost
+          vars:
+            URL: sample.com
+            tasks:
         - name: print OUT var
           ansible.builtin.debug:
             msg: "{{ OUT }}"
