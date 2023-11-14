@@ -13,16 +13,20 @@
 - name: Demo on Task variables
   hosts: localhost
   vars:
-    URL: sample.com
-    URL1: sample.com
-    URL2: sample.com
+    URL1: example.com
+    URL2: example.com
+
   tasks:
     - name: print URL1 variable
       ansible.builtin.debug:
         msg: "{{ URL1 }}"
+        vars:
+          URL1:sample.com
     - name: print URL2 variable
       ansible.builtin.debug:
         msg: "{{ URL2 }}"
+        vars:
+          URL2: sample.com
 
 
 
@@ -32,10 +36,7 @@
         - name: get uptime of server
           ansible.builtin.shell: uptime
           register: OUT
-        - hosts: localhost
-          vars:
-            URL: sample.com
-            tasks:
+
         - name: print OUT var
           ansible.builtin.debug:
             msg: "{{ OUT }}"
