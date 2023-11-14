@@ -1,5 +1,5 @@
 ---
-- name: sample.com
+- name: sample
   hosts: all
   tasks:
     - name: ping
