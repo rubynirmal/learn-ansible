@@ -1,24 +1,30 @@
----
-- hosts: localhost
+- name: demo on varibles
+  hosts: localhost
   vars:
     URL: sample.com
-
-  tasks:
+    tasks:
     - name: print URL variable
       ansible.builtin.debug:
         msg: "{{ URL }}"
 
     - name: Demo on Task variables
       hosts: localhost
-
-      tasks:
-        - name: set URL1 variable
-          set_fact:
+      vars:
+        URL1: example.com
+        URL2: example.com
+        tasks:
+        - name: print URL1 variable
+          ansible.builtin.debug:
+            msg: "{{ URL1 }}"
+            vars:
             URL1: sample.com
 
-        - name: set URL2 variable
-          set_fact:
+        - name: print URL2 variable
+          ansible.builtin.debug:
+            msg: "{{ URL2 }}"
+            vars:
             URL2: sample.com
+
 
         - name: print URL1 variable
           ansible.builtin.debug:
