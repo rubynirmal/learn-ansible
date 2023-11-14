@@ -8,4 +8,4 @@
        msg: "{{ URL }}"
 
 # Value stats with a variable, like msg: "{{ URL }}" then quotes are needed, if it does not start with variable like msg:
- Hello {{ URL }}, then quotes are not needed.
+
