@@ -9,3 +9,16 @@
 
 # Value starts with a variable, like msg: {{ URL }} then quotes are needed, if it does not start with variable like msg:
 
+- name: Demo on Task variables
+  hosts: localhost
+  tasks:
+    - name: print URL1 variable
+      ansible.builtin.debug:
+        msg: "{{ URL1 }}"
+        vars:
+          URL1: sample.com
+    - name: print URL2 variable
+      ansible.builtin.debug:
+        msg: "{{ URL2 }}"
+        vars:
+          URL2: sample.com
