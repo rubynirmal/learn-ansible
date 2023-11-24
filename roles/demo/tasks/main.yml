@@ -1,5 +1,5 @@
 - name: Demo on Roles
   hosts: localhost
-  gather_facts: true
   roles:
     - demo
+
