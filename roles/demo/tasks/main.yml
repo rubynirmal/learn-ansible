@@ -1,5 +1,3 @@
-- name: Demo on Roles
-  hosts: localhost
-  roles:
-    - demo
-
+- name: print Hello
+  ansible.builtin.debug:
+    msg: Hello world from Demo Role
