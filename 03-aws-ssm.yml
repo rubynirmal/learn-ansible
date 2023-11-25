@@ -4,5 +4,5 @@
   tasks:
     - name: lookup ssm parameter store in the current region
       debug:
-        msg: "{{ lookup('amazon.aws.aws_ssm', 'sample' ) }}"
+        msg: "{{ lookup('amazon.aws.aws_ssm', 'sample', region='us-east-2' ) }}"
 
